@@ -1,0 +1,1 @@
+a:14:{s:6:"status";s:7:"success";s:7:"country";s:5:"Malta";s:11:"countryCode";s:2:"MT";s:6:"region";s:2:"49";s:10:"regionName";s:10:"Saint John";s:4:"city";s:10:"San Ġwann";s:3:"zip";s:3:"SGN";s:3:"lat";d:35.9099;s:3:"lon";d:14.4748;s:8:"timezone";s:12:"Europe/Malta";s:3:"isp";s:8:"GO P.L.C";s:3:"org";s:0:"";s:2:"as";s:17:"AS15735 GO p.l.c.";s:5:"query";s:13:"46.11.241.111";}

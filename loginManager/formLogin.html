@@ -1,0 +1,29 @@
+<script>
+
+	var logUriCheck;
+	if (window.parent.location.href == window.location.href) {
+		logUriCheck = 'loginCheck.php';
+	}
+	else {
+		logUriCheck = 'loginManager/loginCheck.php';
+	}
+	
+	var source;
+	source = '<fieldset style="width:300px;"><legend style="color:black;font-weight:bold;">Super Acceso</legend><form name="formLogIn" id="formLogIn" action="'+logUriCheck+'" onSubmit="document.getElementById(\'logSub\').style.display=\'none\';" target="loginManager" enctype="multipart/form-data" method="post">';
+	
+	source += '<table><tr><td>Usuario: </td><td> <input type="text" name="user" id="user" value="" /></td></tr>';
+	source += '<tr><td>Clave: </td><td> <input type="password" name="password" value="" /></td></tr>';
+	
+	source += '<tr><td colspan=2><input type="submit" name="logSub" value="Entrar" id="logSub" /></td></tr></table>';
+	source += '</form>';
+	//source += '<br /><br /><a href="mailto:joan.lc.webmaster@gmail.com" target="_blank" style="font-size:0.7em;"><b>Contacto</b> </a>';
+	source += '</fieldset><br><br>';
+	
+	if (window.parent.location.href == window.location.href) {
+		document.write(source);
+	}
+	else {
+		window.parent.document.getElementById('showContents').innerHTML = source;
+		window.parent.document.getElementById('user').focus();
+	}
+</script>

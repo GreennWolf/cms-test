@@ -1,0 +1,61 @@
+{
+  "name": "iabtechlabtcf",
+  "version": "1.5.9",
+  "description": "Official compliant tool suite for implementing the iab. Transparency and Consent Framework (TCF).",
+  "private": true,
+  "workspaces": [
+    "modules/core",
+    "modules/testing",
+    "modules/cmpapi",
+    "modules/cli",
+    "modules/stub"
+  ],
+  "author": "Mayank Mishra <mayank@iabtechlab.com>",
+  "homepage": "https://github.com/chrispaterson/iabtcf",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "yarn workspaces run build",
+    "tidy": "rm -rf modules/**/lib coverage modules/**/coverage .nyc_output modules/**/.nyc_output modules/**/*.log",
+    "clean": "rm -rf node_modules modules/**/node_modules && yarn run tidy",
+    "lint": "yarn workspaces run lint",
+    "test": "yarn workspace @iabtechlabtcf/core test && yarn workspace @iabtechlabtcf/cmpapi test",
+    "debug": "ndb yarn test",
+    "postversion": "./bin/version",
+    "deploy": "./bin/publish-version",
+    "preflight": "yarn build && yarn test",
+    "serve-cov": "npx http-server ./coverage/",
+    "test-cov": "rm -rf coverage; nyc --reporter html mocha",
+    "test-ci": "yarn workspace @iabtechlabtcf/core test-ci && yarn workspace @iabtechlabtcf/cmpapi test-ci"
+  },
+  "keywords": [
+    "interactive",
+    "advertising",
+    "bureau",
+    "iab",
+    "transparency",
+    "consent",
+    "consentstring",
+    "tcstring",
+    "gvl",
+    "vendor",
+    "framework",
+    "tcf",
+    "lib",
+    "library",
+    "cmp",
+    "2.0",
+    "v2.0",
+    "v2",
+    "software",
+    "development",
+    "api",
+    "kit",
+    "sdk",
+    "gdpr"
+  ],
+  "devDependencies": {
+    "json": "^10.0.0",
+    "mocha": "9.2.0",
+    "mocha-junit-reporter": "^2.0.2"
+  }
+}

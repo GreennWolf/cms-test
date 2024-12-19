@@ -1,0 +1,79 @@
+{
+  "name": "@iabtechlabtcf/cli",
+  "version": "1.5.9",
+  "description": "Decode a iab TCF (Transparency and Consent Framework) TC String via the command line",
+  "author": "Mayank Mishra <mayank@iabtechlab.com>",
+  "homepage": "https://iabtcf.com/",
+  "license": "Apache-2.0",
+  "bin": {
+    "tcstring": "./lib/cjs/index.js"
+  },
+  "type": "module",
+  "main": "lib/cjs/index.js",
+  "module": "lib/mjs/index.js",
+  "exports": {
+    ".": {
+      "import": "./lib/mjs/index.js",
+      "require": "./lib/cjs/index.js"
+    }
+  },
+  "types": "lib/mjs/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "preversion": "echo 'woops I think you meant to go to the root' && exit 1",
+    "build": "../build ; chmod a+x lib/mjs/index.js ; chmod a+x lib/cjs/index.js",
+    "lint": "eslint `find src -name '*.ts'`"
+  },
+  "dependencies": {
+    "@iabtechlabtcf/core": "1.5.9"
+  },
+  "devDependencies": {
+    "@types/node": "18.17.4",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "6.8.0",
+    "source-map-support": "^0.5.12",
+    "ts-node": "10.9.1",
+    "typedoc": "0.24.8",
+    "typescript": "4.9.5"
+  },
+  "eslintIgnore": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "interactive",
+    "advertising",
+    "bureau",
+    "iab",
+    "transparency",
+    "consent",
+    "consentstring",
+    "tcstring",
+    "gvl",
+    "vendor",
+    "framework",
+    "tcf",
+    "lib",
+    "library",
+    "cmp",
+    "2.0",
+    "v2.0",
+    "v2",
+    "software",
+    "development",
+    "api",
+    "kit",
+    "sdk",
+    "gdpr"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InteractiveAdvertisingBureau/iabtcf-es.git",
+    "directory": "modules/cli"
+  }
+}

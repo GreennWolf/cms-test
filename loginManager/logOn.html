@@ -1,0 +1,13 @@
+<script>
+	//alert('Logged ON!');
+	
+	if (window.parent.location.href == window.location.href) {
+		window.parent.location.href = '../admin.php';
+		//alert('../admin.php');
+	}
+	else {
+		window.parent.location.href=window.parent.location.href;
+		/*window.parent.location.reload();*/
+		//alert('reload()');
+	}
+</script>

@@ -1,0 +1,73 @@
+La cadena TCString de TCF IAB v2 se construye siguiendo el formato especificado por el IAB Tech Lab¹. El formato consta de cuatro partes: el *core string, el **publisher restrictions segment, el **disclosed vendors segment* y el *allowed vendors segment*. Cada parte tiene una estructura binaria que codifica la información sobre el consentimiento del usuario, las restricciones del editor, los proveedores revelados y los proveedores permitidos. El orden en que se construye la cadena TCString es el siguiente:
+
+- Primero, se genera el *core string*, que contiene la información básica sobre el consentimiento del usuario, como la versión del TCF, el identificador del CMP, el propósito del consentimiento, etc.
+- Segundo, se añade el *publisher restrictions segment*, que contiene las restricciones que el editor impone a los proveedores para procesar los datos del usuario. Este segmento es opcional y solo se incluye si el editor tiene alguna restricción.
+- Tercero, se añade el *disclosed vendors segment*, que contiene la lista de los proveedores que el editor ha revelado al usuario. Este segmento es opcional y solo se incluye si el editor quiere informar al usuario de los proveedores que utiliza.
+- Cuarto, se añade el *allowed vendors segment*, que contiene la lista de los proveedores que el usuario ha permitido que procesen sus datos. Este segmento es opcional y solo se incluye si el usuario ha dado su consentimiento explícito a algunos proveedores.
+
+La cadena TCString resultante se codifica en base64url y se separa por puntos entre cada segmento. Por ejemplo, una cadena TCString válida podría ser:
+
+`COwzjyOOwzjyOAGABCENAPCgAAAAAAAAAAiQAA.IFukWSQgAIQwgI0QEByFAAAAeIAACAAQAIAgEBCAagAQgBIA.QFukWSQgAIQwgI0QEByFAAAAeIAACAAQAIAgEBCAagAQgBIA.YFukWSQgAIQwgI0QEByFAAAAeIAACAAQAIAgEBCAagAQgBIA`
+
+Para más información sobre el formato y la estructura de la cadena TCString, puede consultar la documentación del IAB Tech Lab¹ o el sitio web de IAB Europe². También puede encontrar recursos útiles para los editores que quieran integrarse con la versión 2.0 del TCF de la IAB en los siguientes enlaces³⁴. Espero que esta respuesta le haya sido de ayuda. 😊
+
+Origen: Conversación con Bing, 22/9/2023
+(1) TCString | @iabtcf/core - API Documentation. https://iabtcf.com/api/core/classes/tcstring.html.
+(2) TCF v2.0 – IAB Europe. https://iabeurope.eu/tcf-2-0/.
+(3) Integración de editores con la versión 2.0 del TCF de la IAB. https://support.google.com/admanager/answer/9805023?hl=es.
+(4) Integración de editores con la versión 2.0 del TCF de la IAB. https://support.google.com/admob/answer/9760862?hl=es.
+
+
+
+__________________________
+
+El orden de los parámetros que se utilizan para construir la cadena TCString depende de la parte del formato que se esté generando. Cada parte tiene una estructura binaria que codifica la información sobre el consentimiento del usuario, las restricciones del editor, los proveedores revelados y los proveedores permitidos. Los parámetros que se usan para cada parte son los siguientes:
+
+- Para el *core string*, los parámetros son:
+    - *Version*: el número de versión del TCF que se está utilizando.
+    - *Created*: la fecha y hora en que se creó la cadena TCString.
+    - *LastUpdated*: la fecha y hora en que se actualizó la cadena TCString por última vez.
+    - *CmpId*: el identificador del CMP que ha obtenido el consentimiento del usuario.
+    - *CmpVersion*: la versión del CMP que ha obtenido el consentimiento del usuario.
+    - *ConsentScreen*: el número de pantalla en el que el usuario ha dado su consentimiento.
+    - *ConsentLanguage*: el código de idioma en el que el usuario ha dado su consentimiento.
+    - *VendorListVersion*: la versión de la lista de proveedores que se ha utilizado para obtener el consentimiento del usuario.
+    - *TcfPolicyVersion*: la versión de la política del TCF que se ha aplicado para obtener el consentimiento del usuario.
+    - *IsServiceSpecific*: un indicador de si la cadena TCString es específica para un servicio o se puede compartir entre servicios.
+    - *UseNonStandardStacks*: un indicador de si el editor ha utilizado pilas no estándar para obtener el consentimiento del usuario.
+    - *SpecialFeatureOptIns*: un vector de bits que indica si el usuario ha dado su consentimiento explícito a algunas características especiales, como el escaneo de contenido o el reconocimiento facial.
+    - *PurposesConsent*: un vector de bits que indica si el usuario ha dado su consentimiento a los propósitos estándar definidos por el IAB.
+    - *PurposesLITransparency*: un vector de bits que indica si el usuario ha dado su transparencia al tratamiento legítimo de sus datos por parte de los proveedores para los propósitos estándar definidos por el IAB.
+    - *PurposeOneTreatment*: un indicador de si el usuario está sujeto o no al tratamiento del propósito uno, que se refiere al almacenamiento y acceso a la información en el dispositivo del usuario.
+    - *PublisherCC*: el código de país del editor, que se utiliza para determinar el tratamiento del propósito uno.
+    - *VendorConsent*: un vector de bits que indica si el usuario ha dado su consentimiento a los proveedores que figuran en la lista de proveedores.
+    - *VendorLITransparency*: un vector de bits que indica si el usuario ha dado su transparencia al tratamiento legítimo de sus datos por parte de los proveedores que figuran en la lista de proveedores.
+    - *PublisherRestrictions*: un vector de bits que indica si el editor ha impuesto alguna restricción a los proveedores para procesar los datos del usuario para algunos propósitos.
+
+- Para el *publisher restrictions segment*, los parámetros son:
+    - *NumPubRestrictions*: el número de restricciones que el editor ha impuesto a los proveedores.
+    - *PurposeId*: el identificador del propósito para el que se aplica la restricción.
+    - *RestrictionType*: el tipo de restricción que se aplica, que puede ser: no hay restricción, requiere consentimiento, requiere transparencia de tratamiento legítimo o requiere consentimiento y transparencia de tratamiento legítimo.
+    - *NumEntries*: el número de entradas que especifican los proveedores a los que se aplica la restricción.
+    - *IsARange*: un indicador de si la entrada es un rango o una lista de proveedores individuales.
+    - *StartOrOnlyVendorId*: el identificador del primer proveedor o del único proveedor al que se aplica la restricción.
+    - *EndVendorId*: el identificador del último proveedor al que se aplica la restricción, si la entrada es un rango.
+
+- Para el *disclosed vendors segment*, los parámetros son:
+    - *MaxVendorId*: el identificador máximo de los proveedores que el editor ha revelado al usuario.
+    - *IsARange*: un indicador de si el segmento es un rango o una lista de proveedores individuales.
+    - *StartOrOnlyVendorId*: el identificador del primer proveedor o del único proveedor que el editor ha revelado al usuario.
+    - *EndVendorId*: el identificador del último proveedor que el editor ha revelado al usuario, si el segmento es un rango.
+
+- Para el *allowed vendors segment*, los parámetros son:
+    - *MaxVendorId*: el identificador máximo de los proveedores que el usuario ha permitido que procesen sus datos.
+    - *IsARange*: un indicador de si el segmento es un rango o una lista de proveedores individuales.
+    - *StartOrOnlyVendorId*: el identificador del primer proveedor o del único proveedor que el usuario ha permitido que procesen sus datos.
+    - *EndVendorId*: el identificador del último proveedor que el usuario ha permitido que procesen sus datos, si el segmento es un rango.
+
+Espero que esta respuesta le haya aclarado el orden de los parámetros que se utilizan para construir la cadena TCString. Si tiene alguna otra pregunta, no dude en preguntarme. 😊
+
+: [TCF v2.0 - Transparency & Consent String with Global Vendor List Format](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20Consent%20string%20and%20vendor%20list%20formats%20v2.md)
+: [IAB Europe Transparency & Consent Framework](https://iabeurope.eu/tcf-2-0/)
+: [TCF v2.0 - Publisher Implementation Guide](https://iabeurope.eu/wp-content/uploads/2020/05/TCF-v2.0-Publisher-Implementation-Guide-v1.0.pdf)
+: [TCF v2.0 - CMP API v2](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md)

@@ -1,0 +1,136 @@
+
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-vue/src/index';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+$link-hover-color: #DD3333;
+$muted-title-color: #555;
+$subtle-background-color: #FFFFFF;
+$separator-color: #ccc;
+$subtle-separator-color: #F3F3F3;
+$borders: 1px solid;
+$standard-space: 10px;
+
+$off-white: #FBFDFD;
+$sky: #CAEBF2;
+$carbon: #A9A9A9;
+$watermelon: #FF3B3F;
+$neutral: #FF3B3F;
+$body-text: #545454;
+
+
+body {
+  background-color: $off-white;
+  background: url('assets/background.jpg') repeat;
+  color: $body-text;
+}
+
+a {
+
+  color: $body-text;
+  text-decoration: none;
+
+  &:hover {
+    color: $watermelon;
+    text-decoration: none;
+  }
+}
+
+.row {
+  margin: $standard-space 0px;
+}
+
+h6 {
+  font-family: Arial;
+  font-weight: bolder;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: .15s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+button:focus {
+  outline:0;
+}
+input:focus {
+  outline:0;
+}
+.item-key {
+  font-weight: bold;
+}
+.item-key-only {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.item-string {
+  color: #6b9639;
+}
+.item-boolean {
+  color: #bf0880;
+}
+.item-null {
+  color: #FFFF00;
+}
+.item-date {
+  color: #39966e;
+}
+.decode-output-error {
+  font-weight: bold;
+  color: #DD3333;
+}
+.github-link {
+  float: right;
+}
+.navbar {
+  background-color: $off-white;
+  border-bottom: 1px solid $watermelon;
+  box-shadow: 0px 5px 5px #DDD;
+}
+.b-card {
+  box-shadow: 0px 0px 5px #DDD;
+}
+.top-space {
+  padding:30px;
+}
+pre {
+  white-space: pre-wrap;
+}
+.badge-watermelon {
+
+  background-color: $watermelon;
+  color: white;
+
+}
+.btn-outline-watermelon {
+  color: $watermelon;
+  border-color: $watermelon;
+  color: $body-text;
+}
+
+.btn-outline-watermelon:hover {
+
+  background-color: $watermelon;
+  border-color: $off-white;
+  color: white;
+
+}
+
+.file-issue-text {
+  margin-left: $standard-space;
+  font-size: 70%;
+  a {
+    color: $watermelon;
+    img {
+      height:15px;
+      width:15px;
+    }
+  }
+}

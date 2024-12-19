@@ -1,0 +1,10 @@
+<script>
+	if (window.parent.document.getElementById('loginManager').style.display == 'none') {
+		window.parent.document.getElementById('loginManager').style.display = '';
+		window.parent.document.cookie	=	'display=table';
+	}
+	else {
+		window.parent.document.getElementById('loginManager').style.display	=	'none';
+		window.parent.document.cookie	=	'display=none';
+	}
+</script>

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      { "name": "vue-ts-plugin" }
+    ],
+    "target": "ES6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "preserveConstEnums": true,
+    "declaration": false,
+    "allowUnreachableCode": false,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "downlevelIteration": true,
+    "pretty": true,
+    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true
+  }
+}

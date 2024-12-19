@@ -1,0 +1,1 @@
+#php_value open_basedir "/var/www/vhosts/cookie21.com/httpdocs/cm/eXt/"

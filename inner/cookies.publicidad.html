@@ -1,0 +1,28 @@
+<input type="checkbox" id="pubCookies" '+getCookie("pubCookies")+' onchange="calculoreversocookies();" >
+
+<label for="pubCookies"> <b><span class="cm21color">{idiomas_cookies_publicidad}</span></b></label>
+
+<br>
+<span 
+
+onclick=if(document.getElementById("publicidadCookiesCMid").style.display){document.getElementById("publicidadCookiesCMid").style.display="";}else{document.getElementById("publicidadCookiesCMid").style.display="none";}
+
+>
+<span alt="Ampliar/ocultar detalle" style="cursor:help;">
+
+{idioma_cookies_publicidad_info}
+
+</span>
+<br>
+<span style="text-decoration:underline;font-weight:bold;cursor:help;"  
+
+
+><i class="fa fa-arrow-up"></i><i class="fa fa-arrow-down"></i></span>
+<br>
+<span id="publicidadCookiesCMid" alt="Ocultar detalle" 
+onclick=this.style.display="none"; style="display:none;cursor:help;">
+
+{idioma_cookies_publicidad_extra}
+
+</span></span>
+<br><br>

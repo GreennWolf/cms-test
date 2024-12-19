@@ -1,0 +1,32 @@
+
+<input type="checkbox" id="statsCookies" '+getCookie("statsCookies")+' 
+
+onchange="calculoreversocookies();" ><label for="statsCookies"> 
+
+<b><span class="cm21color">{cookies_medicion}</span></b></label>
+
+<br>
+<span 
+
+onclick=if(document.getElementById("medicionCookiesCMidid").style.display){document.getElementById("medicionCookiesCMidid").style.display="";}else{document.getElementById("medicionCookiesCMidid").style.display="none";}
+
+>
+<span alt="Ampliar/ocultar detalle" style="cursor:help;">
+
+{idioma_cookies_medicion_info}
+
+
+</span>
+<br>
+<span style="text-decoration:underline;font-weight:bold;cursor:help;"  
+
+
+><i class="fa fa-arrow-up"></i><i class="fa fa-arrow-down"></i></span>
+<br>
+<span id="medicionCookiesCMidid" alt="Ocultar detalle" 
+onclick=this.style.display="none"; style="display:none;cursor:help;">
+
+{idioma_cookies_medicion_extra}
+
+</span></span>
+<br><br>

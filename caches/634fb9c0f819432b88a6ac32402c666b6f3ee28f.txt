@@ -1,0 +1,1 @@
+a:14:{s:6:"status";s:7:"success";s:7:"country";s:5:"Italy";s:11:"countryCode";s:2:"IT";s:6:"region";s:2:"21";s:10:"regionName";s:8:"Piedmont";s:4:"city";s:5:"Turin";s:3:"zip";s:5:"10127";s:3:"lat";d:45.0914;s:3:"lon";d:7.6639;s:8:"timezone";s:11:"Europe/Rome";s:3:"isp";s:8:"VODAFONE";s:3:"org";s:0:"";s:2:"as";s:30:"AS30722 Vodafone Italia S.p.A.";s:5:"query";s:12:"130.25.85.66";}
